@@ -1,5 +1,11 @@
 # Get started with accessing data using REST call
-### Create table in database -
+## H2 DB integration
+```
+http://localhost:8080/hello?userId=1
+
+```
+### Alternately for connecting to different to databases - 
+## Create table in database -
 ``` 
 CREATE TABLE "C2Y"."YTUSER" 
    (	"USER_ID" NUMBER(10,0), 
@@ -10,13 +16,14 @@ CREATE TABLE "C2Y"."YTUSER"
 ```
 
 
-### Configure application.properties file with database config
+## Configure application.properties file with database config
 ``` 	
 DB_IP_ADDRESS, DB_PORT , DB_SID or DB_SERVICE_NAME, DB_USERNAME,DB_PASSWORD
 ```
 
-### Run the application and access it using below url with userId
+## Run the application and access it using below url with userId
 ``` 
-http://localhost:8080/hello?userId=526 
-``` 
+http://localhost:8080/hello?userId=1
+ 
+```
 
