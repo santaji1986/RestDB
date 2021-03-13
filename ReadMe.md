@@ -1,29 +1,33 @@
-# Get started with accessing data using REST call
-## H2 DB integration
-```
-http://localhost:8080/hello?userId=1
+# SWAGGER , TEST URL, H2 DB  
 
-```
-### Alternately for connecting to different to databases - 
+## swagger URL
+
+http://localhost:8080/swagger-ui/index.html
+
+## Test URLs
+
+[Test URL for userId 1 - http://localhost:8080/hello?userId=1](http://localhost:8080/hello?userId=1)
+
+[GetAllData - http://localhost:8080/getAllData](http://localhost:8080/getAllData)
+
+## Managing in-memory H2 Database H2-Console URL
+
+http://localhost:8080/h2-console/
+
 ## Create table in database -
-``` 
-CREATE TABLE "C2Y"."YTUSER" 
-   (	"USER_ID" NUMBER(10,0), 
-	"USERNAME" VARCHAR2(50 BYTE), 
-	"PASSWORD" VARCHAR2(100 BYTE), 
-	"PLAIN_PASSWORD" VARCHAR2(100 BYTE)
+
+```SQL
+CREATE TABLE "USERS" 
+   ( 
+ "USER_ID" NUMBER(10,0), 
+ "USERNAME" VARCHAR2(50 BYTE), 
+ "PASSWORD" VARCHAR2(100 BYTE), 
+ "CITY" VARCHAR2(100 BYTE)
    ); 
 ```
 
-
 ## Configure application.properties file with database config
-``` 	
+
+``
 DB_IP_ADDRESS, DB_PORT , DB_SID or DB_SERVICE_NAME, DB_USERNAME,DB_PASSWORD
-```
-
-## Run the application and access it using below url with userId
-``` 
-http://localhost:8080/hello?userId=1
- 
-```
-
+``
