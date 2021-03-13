@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
-@Table(name = "ytuser")
+@Table(name = "USERS")
 @Data
 @Builder
 @NoArgsConstructor
@@ -41,8 +41,7 @@ public class User implements Serializable {
     @Column(name = "PASSWORD")
     @JsonIgnore
     private String password;
-    @Column(name = "PLAIN_PASSWORD")
-    @JsonIgnore
-    private String plainPassword;
+    @Column(name = "CITY")
+    private String city;
 
 }
