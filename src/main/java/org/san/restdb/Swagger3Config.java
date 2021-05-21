@@ -11,9 +11,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class Swagger3Config {
-	@Bean
-	public Docket produceApi() {
-		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("org.san.restdb")).build();
-	}
+    @Bean
+    public Docket produceApi() {
+        // @formatter:off
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage(this.getClass().getPackage().getName()))
+                .build();
+        // @formatter:on
+
+    }
 }

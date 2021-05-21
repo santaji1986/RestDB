@@ -14,21 +14,16 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Entity(name = "USERS")
+@Entity
 @DynamicUpdate
-public class User extends AuditableEntity {
-    // private static final long serialVersionUID = -4541856084396704983L;
-
+public class Student extends AuditableEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "USERNAME")
-    private String username;
+    @Column(name = "first_name")
+    private String firstName;
 
-    @Column(name = "password")
-    // @JsonIgnore
-    private String password;
-    @Column(name = "CITY")
-    private String city;
+    @Column(name = "last_name")
+    private String lastName;
 }
