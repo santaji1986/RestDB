@@ -12,24 +12,24 @@ import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import java.util.Date;
+
 @Data
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public class AuditableEntity {
-	
+
 	@CreatedBy
 	@Column(name = "CREATED_BY")
 	private String createdBy;
-	
+
 	@CreatedDate
 	@Column(name = "CREATED_DATE")
 	private Date createdDate;
-	
+
 	@LastModifiedBy
 	@Column(name = "LAST_MODIFIED_BY")
 	private String lastModifiedBy;
-	
-	
+
 	@LastModifiedDate
 	@Column(name = "LAST_MODIFIED_DATE")
 	private Date lastModifiedDate;

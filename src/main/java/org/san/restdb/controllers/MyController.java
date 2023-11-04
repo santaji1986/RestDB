@@ -35,8 +35,7 @@ public class MyController {
     private StudentService studentService;
 
     @GetMapping(value = "/hello")
-    public User hello(@RequestParam(value = "userId", required = false)
-    String userId) {
+    public User hello(@RequestParam(value = "userId", required = false) String userId) {
         User user = null;
         if (null != userId) {
             final Optional<User> userOptional = userRepository.findById(Integer.parseInt(userId));
@@ -49,15 +48,13 @@ public class MyController {
     }
 
     @PostMapping("/addUser")
-    public ResponseEntity<String> addNewUser(@RequestBody
-    AddUserRequest userInfo) {
+    public ResponseEntity<String> addNewUser(@RequestBody AddUserRequest userInfo) {
         userService.addUser(userInfo);
         return new ResponseEntity<>("Success", HttpStatus.OK);
     }
 
     @PutMapping("updateUser")
-    public ResponseEntity<String> updateUser(@RequestBody
-    UpdateUserRequest userInfo) {
+    public ResponseEntity<String> updateUser(@RequestBody UpdateUserRequest userInfo) {
         try {
             userService.updateUser(userInfo);
         } catch (final Exception exception) {
@@ -74,15 +71,13 @@ public class MyController {
     }
 
     @PostMapping("/addStudent")
-    public ResponseEntity<String> addNewStudent(@RequestBody
-    AddStudentRequest userInfo) {
+    public ResponseEntity<String> addNewStudent(@RequestBody AddStudentRequest userInfo) {
         studentService.addStudent(userInfo);
         return new ResponseEntity<>("Success", HttpStatus.OK);
     }
 
     @PutMapping("updateStudent")
-    public ResponseEntity<String> updateStudent(@RequestBody
-    UpdateStudentRequest userInfo) {
+    public ResponseEntity<String> updateStudent(@RequestBody UpdateStudentRequest userInfo) {
         try {
             studentService.updateStudent(userInfo);
         } catch (final Exception exception) {
